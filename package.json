@@ -1,6 +1,6 @@
 {
   "name": "lipitva",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Lipitva - indic script utilities like transliteration, etc.",
   "main": "dist/index.js",
   "module": "dist-esm/index.js",
@@ -27,7 +27,6 @@
     "dist-esm",
     "dist-umd",
     "types",
-    "docs",
     "README.md"
   ],
   "devDependencies": {
