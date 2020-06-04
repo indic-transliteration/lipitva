@@ -1,0 +1,43 @@
+{
+    "extends": [
+        "airbnb",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript"
+    ],
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
+    "env": {
+        "es6": true,
+        "browser": true,
+        "node": true
+    },
+    "rules": {
+        "indent": [
+            "error",
+            4
+        ],
+        "camelcase": 0,
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "error",
+        "object-curly-newline": 0,
+        "max-len": "off",
+        "no-useless-escape": "off",
+        "no-underscore-dangle": "off",
+        "max-classes-per-file": 0,
+        "import/prefer-default-export": 0,
+        "import/extensions": 0
+    },
+    "settings": {
+        "import/extensions": [
+            ".js",
+            ".ts"
+        ]
+    }
+}

@@ -1,0 +1,64 @@
+{
+  "name": "lipitva",
+  "version": "0.0.1",
+  "description": "Lipitva - indic script utilities like transliteration, etc.",
+  "main": "dist/index.js",
+  "module": "dist-esm/index.js",
+  "scripts": {
+    "test": "node ./tests/*.js | tap-spec",
+    "prebuild": "rimraf dist && rimraf dist-esm && rimraf dist-umd && rimraf docs && rimraf types",
+    "build:commonjs": "tsc",
+    "build:esm": "tsc -m es6 --outDir dist-esm",
+    "build:umd": "rollup -c rollup.config.js",
+    "build:docs": "typedoc --out docs --target es6 --theme minimal --mode file src",
+    "build:types": "dts-bundle-generator --umd-module-name V -o types/index.d.ts dist-esm/index.d.ts",
+    "build": "npm run build:commonjs && npm run build:esm && npm run build:umd",
+    "lint": "eslint 'src/**/*.ts'"
+  },
+  "keywords": [
+    "transliteration",
+    "indic",
+    "sanscript",
+    "lipi"
+  ],
+  "author": "damodara",
+  "files": [
+    "dist",
+    "dist-esm",
+    "dist-umd",
+    "types",
+    "docs",
+    "README.md"
+  ],
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "@rollup/plugin-json": "^4.0.3",
+    "@rollup/plugin-node-resolve": "^7.1.3",
+    "@typescript-eslint/eslint-plugin": "^2.3.0",
+    "@typescript-eslint/parser": "^2.3.0",
+    "cpr": "^3.0.1",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "rimraf": "^3.0.0",
+    "rollup": "^1.21.3",
+    "rollup-plugin-terser": "^5.1.2",
+    "tap-spec": "^5.0.0",
+    "tape": "^5.0.0",
+    "ts-node": "^8.4.1",
+    "tslib": "^1.10.0",
+    "typedoc": "^0.15.0",
+    "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "fast-memoize": "^2.5.2"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "license": "ISC"
+}
