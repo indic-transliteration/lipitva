@@ -8,7 +8,7 @@ import { RomanScript } from '../../enum';
 export const ItransScheme: IScriptScheme = {
     vowels: s('a A i I u U RRi RRI LLi LLI e ai o au'),
     marks: s('A i I u U RRi RRI LLi LLI e ai o au'),
-    virama: [''],
+    virama: s(''),
     yogavaahas: s('M H .N'),
     consonants: s(`
         k kh g gh ~N
